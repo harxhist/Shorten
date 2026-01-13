@@ -1,0 +1,13 @@
+{
+  "keys": {
+    "llm": {
+      "1": "gsk_groqkey"
+    },
+    "tts": {
+      "1": {
+        "accessKey": "aws_key",
+        "secretKey": "aws_secret"
+      }
+    }
+  }
+}

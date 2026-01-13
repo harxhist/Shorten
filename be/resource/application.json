@@ -1,0 +1,37 @@
+{
+    "LOKI_URL": "http://localhost:3100/loki/api/v1/push",
+    "APP_NAME": "Shorten",
+    "ENVIRONMENT": "development",
+    "ALLOWED_ORIGIN": [
+      "http://localhost:3000",
+      "https://sh10.in"
+    ],
+    "DATABASE_URL": "postgres://devuser:devpass@postgres:5432/devdb",
+    "DB_HOST": "postgres:5432",
+    "DB_NAME": "devdb",
+    "DB_USER": "devuser",
+    "DB_PASS": "devpass",
+    "DB_SECRET_NAME": "db-credentials",
+
+    "S3_ENDPOINT": "http://minio:9000",
+    "S3_REGION": "us-east-1",
+    "S3_ID": "minioadmin",
+    "S3_SECRET": "minioadmin",
+    "S3_TOKEN": "",
+    "S3_AUDIO_BUCKET": "audio",
+    "S3_SPEECH_MARK_BUCKET": "speech-mark",
+    "S3_LLM_BUCKET": "llm",
+    "S3_CLEANED_BUCKET": "cleaned",
+
+    "GROQ_LLM_ENDPOINT": "https://api.groq.com/openai/v1/chat/completions",
+    "GROQ_USER_ROLE": "user",
+    "GROQ_LLM_MODEL": "llama-3.3-70b-versatile",
+    "GROQ_LLM_INSTRUCTION": "You are a superfast, smart, friendly assistant with a knack for making complex things simple and even a little fun. I’ll give you a big block of text. Your job is to summarize it clearly and concisely, in ** 150 to 250 words**.\nHere’s what to keep in mind:\n- Use **simple, clear language** that anyone can understand.\n- Keep the **tone light, friendly**, and if appropriate, **add a touch of humour**—like you're explaining it to a curious friend.\n- Make sure the **main ideas, key points, and essential info** are all captured.\n- Format the result in **Markdown** with **headings and bolding** & **bullets**. Put one newline before all headings. \nOutput structure:\n```markdown Just give me the summary in markdown format, no other text or explanation. Here is the text: ",
+
+    "AWS_REGION": "ap-south-1",
+    "AWS_VOICE_ID": "Joanna",
+    "AWS_SPEECH_MARK_OUTPUT_FORMAT": "json",
+    "AWS_SPEECH_MARK_TYPE": "word",
+    "AWS_AUDIO_OUTPUT_FORMAT": "mp3",
+    "PUBLIC_KEY": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6/tS/BbMMOTkWi3LOQWd\nucSgjF+fB4lAs5zON66c+X63YrvQnjNhZc4ieKqO/L6anr/O+T9U62/+Os00Fu80\nNfSJorC4mkUhBbTFRC2UOrKrdyL4/wB9uxuz+mKHzop+32NVTzyW7Ah8CPYL3EFp\nA18Ple7kSQ7l9U5xRB+xJPIkGfO7VxD/pIuF+gqY0GrC3do8mxMsaXD3/6YW0PzN\n52LRTmHQXfOaddrQa4BmidO6oqI9eLK/eY7aefboX902e0Fo6Khme9snwDa0m9+j\n+VS/468HOVWW7qsJcGsY0ds0tV9GKZT/a8ZG/yfxtKmFEHBA/Ne3snvQex0zz0PF\nZwIDAQAB\n-----END PUBLIC KEY-----\n"
+  }

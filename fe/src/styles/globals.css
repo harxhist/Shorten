@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.typewriter {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.convex-underline {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -4px;
+  width: 110%;
+  height: 5px;
+  border: solid 5px #f2bb4b;
+  border-color: #f2bb4b transparent transparent transparent;
+  border-radius: 50%;
+}

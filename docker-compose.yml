@@ -1,0 +1,96 @@
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "devuser", "-d", "devdb"]
+      interval: 30s
+      retries: 5
+      start_period: 10s
+      timeout: 10s
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "--silent", "--fail", "http://localhost:9001/minio/health/live"]
+      interval: 30s
+      retries: 5
+      start_period: 10s
+      timeout: 10s
+
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      set -e;
+      /usr/bin/mc alias set minio http://minio:9000 minioadmin minioadmin;
+      /usr/bin/mc mb minio/audio --ignore-existing;
+      /usr/bin/mc mb minio/speech-mark --ignore-existing;
+      /usr/bin/mc mb minio/llm --ignore-existing;
+      /usr/bin/mc mb minio/cleaned --ignore-existing;
+      echo 'Buckets created successfully on MinIO server.';
+      "
+
+  app:
+    build:
+      context: ./be
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "2112:2112"
+      - "443:443"
+    volumes:
+      - .:/app
+    environment:
+      DB_USER: devuser
+      DB_PASS: devpass
+      DB_HOST: postgres
+      DB_NAME: devdb
+      DATABASE_URL: postgres://devuser:devpass@postgres:5432/devdb
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_REGION: us-east-1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      createbuckets:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "postgres", "-U", "devuser"]
+      interval: 30s
+      retries: 5
+      start_period: 10s
+      timeout: 10s
+
+  frontend:
+    build:
+      context: ./fe
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - app
+    volumes:
+      - ./fe/.env:/app/.env
+
+volumes:
+  minio_data:
