@@ -20,7 +20,7 @@
     "iron-session": "^8.0.4",
     "jsonwebtoken": "8.5.1",
     "markdown-to-jsx": "^7.7.3",
-    "next": "15.1.2",
+    "next": "15.1.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-toastify": "^11.0.2",
