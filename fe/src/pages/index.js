@@ -113,7 +113,7 @@ export default function Home({ isHome }) {
             </div>
             <p className="pt-10 mt-10 text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-white">Simply add prefix,</p>
             <p className=" mt-5 text-sm font-style: italic sm:text-base md:text-lg text-white lg:text-xl xl:text-2xl">
-              sh10.io/
+              sh10.in/
               <span className="relative inline-block ">
                 &lt;URL&gt;
                 <span className="convex-underline"></span>

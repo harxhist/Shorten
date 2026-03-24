@@ -4,7 +4,7 @@ import MainHeader from '@/components/MainHeader';
 import Footer from '@/components/Footer';
 
 export default function Privacy() {
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@shorten.io';
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@sh10.in';
 
   return (
     <div className="bg-[#1e1e1e] min-h-screen flex flex-col">

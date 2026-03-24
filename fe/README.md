@@ -18,8 +18,8 @@ Short stuff makes life easy, don't forget to touch reality of long content.
 
 ### How to use 
 
-1.  **Prepend:** Prefix any page with `sh10.io/`
-2.  **Apple Shortcut:** You can download and use the [<em>Shorten<em>](sh10.io/shorten) apple shortcut on macOS/iOS.<Link></Link>
-3.  **Paste URL:** Enter the URL of the webpage on [<em>homepage<em>](sh10.io) you want to summarize.
+1.  **Prepend:** Prefix any page with `sh10.in/`
+2.  **Apple Shortcut:** You can download and use the [<em>Shorten<em>](sh10.in/shorten) apple shortcut on macOS/iOS.<Link></Link>
+3.  **Paste URL:** Enter the URL of the webpage on [<em>homepage<em>](sh10.in) you want to summarize.
 
 **Note:** Use Paywall bypass functionality responsibly. Respect copyright/IP notices and abide by them. Paywall bypass functionality may not be available for all websites. 

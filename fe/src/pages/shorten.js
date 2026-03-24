@@ -12,7 +12,7 @@ import four from '../../public/4.png';
 const Shorten = () => {
   const steps = [
     { image: one, title: 'Normal Browsing ', description: 'The user visits any blog or webpage & needs TL;DR for it' },
-    { image: two, title: 'Adding the Prefix', description: 'Before the original URL, insert "sh10.io/".' },
+    { image: two, title: 'Adding the Prefix', description: 'Before the original URL, insert "sh10.in/".' },
     { image: three, title: 'Getting Gist', description: 'Summary will appear. Click "Listen" to hear it.' },
   ];
 
@@ -59,7 +59,7 @@ const Shorten = () => {
           <div className="flex flex-col space-y-4">
             <h2 className="text-3xl text-white font-thin"> Simple Ways</h2>
             <ul className="text-white list-none space-y-2">
-              <li>Prefix any URL with "sh10.io/"</li>
+              <li>Prefix any URL with "sh10.in/"</li>
               <li>Use <em>Shorten</em> shortcut on Mac/ios.</li>
             </ul>
           </div>
